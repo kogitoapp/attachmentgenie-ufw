@@ -26,6 +26,7 @@ class ufw(
   Boolean                                   $manage_service = $::ufw::params::manage_service,
   Hash                                      $reject         = $::ufw::params::reject,
   String                                    $service_name   = $::ufw::params::service_name,
+  Hash                                      $route          = $::ufw::params::route,
 ) inherits ufw::params {
   Exec {
     path     => '/bin:/sbin:/usr/bin:/usr/sbin',
@@ -43,4 +44,5 @@ class ufw(
   create_resources('::ufw::deny', $deny)
   create_resources('::ufw::limit', $limit)
   create_resources('::ufw::reject', $reject)
+  create_resources('::ufw::route', $route)
 }

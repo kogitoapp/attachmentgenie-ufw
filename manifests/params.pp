@@ -12,5 +12,6 @@ class ufw::params (
   Boolean                                   $manage_service = true,
   Hash                                      $reject         = {},
   String                                    $service_name   = 'ufw',
+  Hash                                      $route          = {},
   ) {
 }
